@@ -132,6 +132,7 @@ Using Callback: Monitoring Training
 You can define a custom callback function that will be called inside the agent.
 This could be useful when you want to monitor training, for instance display live
 learning curves in Tensorboard (or in Visdom) or save the best agent.
+If your callback returns False, training is aborted early.
 
 .. image:: ../_static/img/try_it.png
    :scale: 30 %
@@ -182,7 +183,7 @@ learning curves in Tensorboard (or in Visdom) or save the best agent.
                 print("Saving new best model")
                 _locals['self'].save(log_dir + 'best_model.pkl')
     n_steps += 1
-    return False
+    return True
 
 
   # Create log dir
@@ -299,7 +300,7 @@ However, you can also easily define a custom architecture for the policy network
   class CustomPolicy(FeedForwardPolicy):
       def __init__(self, *args, **kwargs):
           super(CustomPolicy, self).__init__(*args, **kwargs,
-                                             layers=[128, 128, 128],
+                                             net_arch=[dict(pi=[128, 128, 128], vf=[128, 128, 128])],
                                              feature_extraction="mlp")
 
   # Create and wrap the environment

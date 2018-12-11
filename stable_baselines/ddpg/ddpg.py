@@ -299,9 +299,9 @@ class DDPG(OffPolicyRLModel):
                     self.obs_target = self.target_policy.obs_ph
                     self.action_target = self.target_policy.action_ph
 
-                    normalized_obs0 = tf.clip_by_value(normalize(self.policy_tf.processed_x, self.obs_rms),
+                    normalized_obs0 = tf.clip_by_value(normalize(self.policy_tf.processed_obs, self.obs_rms),
                                                        self.observation_range[0], self.observation_range[1])
-                    normalized_obs1 = tf.clip_by_value(normalize(self.target_policy.processed_x, self.obs_rms),
+                    normalized_obs1 = tf.clip_by_value(normalize(self.target_policy.processed_obs, self.obs_rms),
                                                        self.observation_range[0], self.observation_range[1])
 
                     if self.param_noise is not None:
@@ -807,7 +807,10 @@ class DDPG(OffPolicyRLModel):
                             self._store_transition(obs, action, reward, new_obs, done)
                             obs = new_obs
                             if callback is not None:
-                                callback(locals(), globals())
+                                # Only stop training if return value is False, not when it is None. This is for backwards
+                                # compatibility with callbacks that have no return statement.
+                                if callback(locals(), globals()) == False:
+                                    return self
 
                             if done:
                                 # Episode done.

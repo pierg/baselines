@@ -42,6 +42,24 @@ This toolset is a fork of OpenAI Baselines, with a major structural refactoring,
 
 Documentation is available online: [https://stable-baselines.readthedocs.io/](https://stable-baselines.readthedocs.io/)
 
+## RL Baselines Zoo: A Collection of 70+ Trained RL Agents
+
+[RL Baselines Zoo](https://github.com/araffin/rl-baselines-zoo). is a collection of pre-trained Reinforcement Learning agents using
+Stable-Baselines.
+
+It also provides basic scripts for training, evaluating agents and recording videos.
+
+Goals of this repository:
+
+1. Provide a simple interface to train and enjoy RL agents
+2. Benchmark the different Reinforcement Learning algorithms
+3. Provide tuned hyperparameters for each environment and RL algorithm
+4. Have fun with the trained agents!
+
+Github repo: https://github.com/araffin/rl-baselines-zoo
+
+Documentation: https://stable-baselines.readthedocs.io/en/master/guide/rl_zoo.html
+
 ## Installation
 
 ### Prerequisites
@@ -58,6 +76,10 @@ Installation of system packages on Mac requires [Homebrew](https://brew.sh). Wit
 ```bash
 brew install cmake openmpi
 ```
+
+#### Windows 10
+
+To install stable-baselines on Windows, please look at the [documentation](https://stable-baselines.readthedocs.io/en/master/guide/install.html#prerequisites).
 
 ### Install using pip
 Install the Stable Baselines package
@@ -155,13 +177,18 @@ pip install pytest pytest-cov
 pytest --cov-config .coveragerc --cov-report html --cov-report term --cov=.
 ```
 
+## Projects Using Stable-Baselines
+
+We try to maintain a list of project using stable-baselines in the [documentation](https://stable-baselines.readthedocs.io/en/master/misc/projects.html),
+please tell us when if you want your project to appear on this page ;)
+
 ## Citing the Project
 
 To cite this repository in publications:
 
 ```
     @misc{stable-baselines,
-      author = {Hill, Ashley and Raffin, Antonin and Traore, Rene and Dhariwal, Prafulla and Hesse, Christopher and Klimov, Oleg and Nichol, Alex and Plappert, Matthias and Radford, Alec and Schulman, John and Sidor, Szymon and Wu, Yuhuai},
+      author = {Hill, Ashley and Raffin, Antonin and Ernestus, Maximilian and Traore, Rene and Dhariwal, Prafulla and Hesse, Christopher and Klimov, Oleg and Nichol, Alex and Plappert, Matthias and Radford, Alec and Schulman, John and Sidor, Szymon and Wu, Yuhuai},
       title = {Stable Baselines},
       year = {2018},
       publisher = {GitHub},
@@ -172,7 +199,7 @@ To cite this repository in publications:
 
 ## Maintainers
 
-Stable-Baselines is currently maintained by [Ashley Hill](https://github.com/hill-a) (aka @hill-a) and [Antonin Raffin](https://araffin.github.io/) (aka [@araffin](https://github.com/araffin)).
+Stable-Baselines is currently maintained by [Ashley Hill](https://github.com/hill-a) (aka @hill-a), [Antonin Raffin](https://araffin.github.io/) (aka [@araffin](https://github.com/araffin)) and [Maximilian Ernestus](https://github.com/erniejunior) (aka @erniejunior).
 
 ## How To Contribute
 

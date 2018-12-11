@@ -5,6 +5,17 @@ Changelog
 
 For download links, please look at `Github release page <https://github.com/hill-a/stable-baselines/releases>`_.
 
+Release 2.3.0 (2018-12-05)
+--------------------------
+
+- added support for storing model in file like object. (thanks to @erniejunior)
+- fixed wrong image detection when using tensorboard logging with DQN
+- fixed bug in ppo2 when passing non callable lr after loading
+- fixed tensorboard logging in ppo2 when nminibatches=1
+- added early stoppping via callback return value (@erniejunior)
+- added more flexible custom mlp policies (@erniejunior)
+
+
 Release 2.2.1 (2018-11-18)
 --------------------------
 
@@ -175,11 +186,11 @@ mujoco...)
 Maintainers
 -----------
 
-Stable-Baselines is currently maintained by `Ashley Hill`_ (aka @hill-a)
-and `Antonin Raffin`_ (aka `@araffin`_).
+Stable-Baselines is currently maintained by `Ashley Hill`_ (aka @hill-a) `Antonin Raffin`_ (aka `@araffin`_) and `Maximilian Ernestus`_ (aka @erniejunior).
 
 .. _Ashley Hill: https://github.com/hill-a
 .. _Antonin Raffin: https://araffin.github.io/
+.. _Maximilian Ernestus: https://github.com/erniejunior
 .. _@araffin: https://github.com/araffin
 
 Contributors (since v2.0.0):
